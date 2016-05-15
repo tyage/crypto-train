@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7221,        179]
-NotebookOptionsPosition[      6877,        162]
-NotebookOutlinePosition[      7215,        177]
-CellTagsIndexPosition[      7172,        174]
+NotebookDataLength[      5203,        130]
+NotebookOptionsPosition[      4860,        113]
+NotebookOutlinePosition[      5199,        128]
+CellTagsIndexPosition[      5156,        125]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -75,55 +75,6 @@ Cell[BoxData[{
 743297616760191519189089499713870159938576294375352466246300617952834243629529\
 1"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CRT", "[", 
-     RowBox[{"modList_", ",", "valueList_"}], "]"}], ":=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "i", ",", "len", ",", "mod", ",", "val", ",", "nextMod", ",", 
-        "nextVal", ",", "invMod"}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"len", "=", 
-        RowBox[{"Length", "[", "modList", "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"mod", "=", 
-        RowBox[{"modList", "[", 
-         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"val", "=", 
-        RowBox[{"valueList", "[", 
-         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"i", "=", "2"}], ",", 
-         RowBox[{"i", "\[LessEqual]", "len"}], ",", 
-         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"nextMod", "=", 
-           RowBox[{"modList", "[", 
-            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"nextVal", "=", 
-           RowBox[{"valueList", "[", 
-            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"invMod", "=", 
-           RowBox[{"PowerMod", "[", 
-            RowBox[{"nextMod", ",", 
-             RowBox[{"-", "1"}], ",", "mod"}], "]"}]}], ";", 
-          "\[IndentingNewLine]", 
-          RowBox[{"mod", "*=", "nextMod"}], ";", "\[IndentingNewLine]", 
-          RowBox[{"val", "=", 
-           RowBox[{"Mod", "[", 
-            RowBox[{
-             RowBox[{"nextVal", "+", 
-              RowBox[{"nextMod", "*", "invMod", "*", 
-               RowBox[{"(", 
-                RowBox[{"val", "-", "nextVal"}], ")"}]}]}], ",", "mod"}], 
-            "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Return", "[", "val", "]"}], ";"}]}], "\[IndentingNewLine]", 
-     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"x", "=", 
    RowBox[{"CRT", "[", 
     RowBox[{
@@ -149,7 +100,7 @@ Cell[BoxData[{
    3.671866224800248*^9}, {3.6718662551305323`*^9, 3.671866332001108*^9}, {
    3.6718663876937237`*^9, 3.671866489858513*^9}, {3.6718665202957172`*^9, 
    3.6718665310235033`*^9}, {3.671866740981876*^9, 3.671866889587205*^9}, {
-   3.671866952303145*^9, 3.671867050118194*^9}}],
+   3.671866952303145*^9, 3.671867050118194*^9}, 3.672304572813632*^9}],
 
 Cell[BoxData[\
 "20120706002012070600201207060020120706002012070600201207060020120706002012070\
@@ -161,7 +112,7 @@ Cell[BoxData[\
 }, Open  ]]
 },
 WindowSize->{808, 731},
-WindowMargins->{{Automatic, 358}, {Automatic, 22}},
+WindowMargins->{{2285, Automatic}, {79, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -178,8 +129,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 94, 1, 32, "Input"],
 Cell[CellGroupData[{
-Cell[677, 25, 5779, 126, 1300, "Input"],
-Cell[6459, 153, 402, 6, 81, "Print"]
+Cell[677, 25, 3762, 77, 913, "Input"],
+Cell[4442, 104, 402, 6, 81, "Print"]
 }, Open  ]]
 }
 ]

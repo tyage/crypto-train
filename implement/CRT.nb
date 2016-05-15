@@ -1,0 +1,112 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3498,        102]
+NotebookOptionsPosition[      3189,         87]
+NotebookOutlinePosition[      3528,        102]
+CellTagsIndexPosition[      3485,         99]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "CRT", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CRT", "[", 
+     RowBox[{"modList_", ",", "valueList_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "i", ",", "len", ",", "mod", ",", "val", ",", "nextMod", ",", 
+        "nextVal", ",", "invMod"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"len", "=", 
+        RowBox[{"Length", "[", "modList", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"mod", "=", 
+        RowBox[{"modList", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"val", "=", 
+        RowBox[{"valueList", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "len"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nextMod", "=", 
+           RowBox[{"modList", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"nextVal", "=", 
+           RowBox[{"valueList", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"invMod", "=", 
+           RowBox[{"PowerMod", "[", 
+            RowBox[{"nextMod", ",", 
+             RowBox[{"-", "1"}], ",", "mod"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"mod", "*=", "nextMod"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"val", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"nextVal", "+", 
+              RowBox[{"nextMod", "*", "invMod", "*", 
+               RowBox[{"(", 
+                RowBox[{"val", "-", "nextVal"}], ")"}]}]}], ",", "mod"}], 
+            "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "val", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Save", "[", 
+   RowBox[{"\"\<CRT\>\"", ",", "CRT"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6723042483137093`*^9, 3.672304251654026*^9}, {
+  3.67230450437401*^9, 3.672304533421164*^9}, {3.672304576793456*^9, 
+  3.672304598986698*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6723045308619843`*^9, 3.672304531556864*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.672304529483354*^9, 3.67230453000508*^9}}]
+},
+WindowSize->{828, 904},
+WindowMargins->{{893, Automatic}, {-37, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2436, 59, 385, "Input"],
+Cell[2997, 81, 94, 1, 32, "Input"],
+Cell[3094, 84, 91, 1, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

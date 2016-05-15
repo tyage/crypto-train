@@ -1,0 +1,9 @@
+ExEuclid[s_, t_] := Module[{a, x, y}, a = {s, t}; x = {1, 0}; y = {0, 1}; 
+      q = {0}; For[i = 2, a[[i]] != 0, i++, 
+       q = Insert[q, Floor[a[[i - 1]]/a[[i]]], -1]; 
+        a = Insert[a, Mod[a[[i - 1]], a[[i]]], -1]; 
+        x = Insert[x, x[[i - 1]] - q[[i]]*x[[i]], -1]; 
+        y = Insert[y, y[[i - 1]] - q[[i]]*y[[i]], -1]; ]; 
+      Return[{a[[i - 1]], x[[i - 1]], y[[i - 1]]}]; ]
+ 
+i = 100

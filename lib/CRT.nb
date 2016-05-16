@@ -10,16 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3730,        111]
-NotebookOptionsPosition[      3350,         93]
-NotebookOutlinePosition[      3689,        108]
-CellTagsIndexPosition[      3646,        105]
+NotebookDataLength[      3484,        101]
+NotebookOptionsPosition[      3176,         86]
+NotebookOutlinePosition[      3514,        101]
+CellTagsIndexPosition[      3471,         98]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-
-Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
@@ -80,11 +78,6 @@ Cell[BoxData[{
    3.6723066371305017`*^9}, {3.6723067281127787`*^9, 3.6723067395674887`*^9}, 
    3.672307022287878*^9}],
 
-Cell[BoxData["\<\"./lib/CRT.m\"\>"], "Output",
- CellChangeTimes->{3.672306637727673*^9, 3.6723067300936728`*^9, 
-  3.672306887323258*^9}]
-}, Open  ]],
-
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.6723045308619843`*^9, 3.672304531556864*^9}}],
 
@@ -92,7 +85,7 @@ Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.672304529483354*^9, 3.67230453000508*^9}}]
 },
 WindowSize->{828, 904},
-WindowMargins->{{1136, Automatic}, {47, Automatic}},
+WindowMargins->{{1082, Automatic}, {9, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -107,12 +100,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[CellGroupData[{
-Cell[580, 22, 2423, 58, 363, "Input"],
-Cell[3006, 82, 137, 2, 32, "Output"]
-}, Open  ]],
-Cell[3158, 87, 94, 1, 32, "Input"],
-Cell[3255, 90, 91, 1, 32, "Input"]
+Cell[558, 20, 2423, 58, 396, "Input"],
+Cell[2984, 80, 94, 1, 32, "Input"],
+Cell[3081, 83, 91, 1, 32, "Input"]
 }
 ]
 *)

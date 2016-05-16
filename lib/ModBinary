@@ -1,4 +1,0 @@
-ModBinary[k_, g_, p_] := Module[{kBin, y, l, i}, kBin = IntegerDigits[k, 2]; 
-      y = g; l = Length[kBin]; For[i = 2, i <= l, i++, 
-       If[kBin[[i]] == 1, y = Mod[Mod[y^2, p]*g, p], y = Mod[y^2, p]]; ]; 
-      Return[y]; ]

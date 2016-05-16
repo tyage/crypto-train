@@ -1,0 +1,96 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2800,         87]
+NotebookOptionsPosition[      2564,         74]
+NotebookOutlinePosition[      2902,         89]
+CellTagsIndexPosition[      2859,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "LcmGen", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "GcdGen", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GcdGen", "[", 
+     RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"big", ",", "small"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"a", ">", "b"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"big", "=", "a"}], ";", 
+          RowBox[{"small", "=", "b"}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"big", "=", "b"}], ";", 
+          RowBox[{"small", "=", "a"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"small", " ", "\[Equal]", " ", "0"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Return", "[", "big", "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Return", "[", 
+           RowBox[{"GCD", "[", 
+            RowBox[{"small", ",", 
+             RowBox[{"Mod", "[", 
+              RowBox[{"big", ",", "small"}], "]"}]}], "]"}], "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}],
+    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LcmGen", "[", 
+    RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{"a", "*", 
+       RowBox[{"b", "/", 
+        RowBox[{"GcdGen", "[", 
+         RowBox[{"a", ",", "b"}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.672313355090774*^9, 3.672313439535715*^9}}]
+},
+WindowSize->{828, 799},
+WindowMargins->{{874, Automatic}, {68, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2002, 52, 451, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

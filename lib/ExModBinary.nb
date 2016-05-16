@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5940,        157]
-NotebookOptionsPosition[      5601,        140]
-NotebookOutlinePosition[      5968,        156]
-CellTagsIndexPosition[      5925,        153]
+NotebookDataLength[      5996,        157]
+NotebookOptionsPosition[      5685,        141]
+NotebookOutlinePosition[      6024,        156]
+CellTagsIndexPosition[      5981,        153]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,8 +30,8 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"{", 
        RowBox[{
-       "k1Bin", ",", "k2Bin", ",", "n", ",", "gTable", ",", "y", ",", "i"}], 
-       "}"}], ",", "\[IndentingNewLine]", 
+       "k1Bin", ",", "k2Bin", ",", "n", ",", "gTable", ",", "y", ",", "i", 
+        ",", "g"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"k1Bin", "=", 
         RowBox[{"IntegerDigits", "[", 
@@ -117,14 +117,15 @@ Cell[BoxData[{
 982474007414256278367541365120102441738442479235536228759080267197653116363308\
 565847410799463834787187403054790304127798316363741018562315240667128497172090\
 6981652602780728968566018316270266546308856591434093339991506"}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{"ExModBinary", "[", 
   RowBox[{"k1", ",", "g1", ",", "k2", ",", "g2", ",", "p1"}], "]"}]}], "Input",\
 
  CellChangeTimes->{{3.6706493242247953`*^9, 3.670649605060762*^9}, 
    3.6706496451669197`*^9, {3.670649693163015*^9, 3.670649696723469*^9}, {
    3.670649729887348*^9, 3.670649751787518*^9}, {3.670649830480199*^9, 
-   3.670649833630835*^9}, {3.6711867074893713`*^9, 3.671186821803093*^9}}],
+   3.670649833630835*^9}, {3.6711867074893713`*^9, 3.671186821803093*^9}, {
+   3.6723690198465843`*^9, 3.672369029846876*^9}}],
 
 Cell[BoxData[\
 "17062836305483086032652784152023892749720363056162964169311214464684093513221\
@@ -135,13 +136,12 @@ Cell[BoxData[\
  CellChangeTimes->{
   3.670649606310273*^9, 3.670649654160613*^9, 3.670649697188633*^9, 
    3.670649746573812*^9, 3.6706498007401733`*^9, 3.6706498339883204`*^9, {
-   3.671186773379018*^9, 3.671186822372896*^9}}]
+   3.671186773379018*^9, 3.671186822372896*^9}, 3.67236905495461*^9}]
 }, Open  ]]
 },
 WindowSize->{808, 751},
 WindowMargins->{{Automatic, -173}, {Automatic, 41}},
-FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (2016\:5e743\
-\:67081\:65e5)",
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -156,8 +156,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 4443, 104, 827, "Input"],
-Cell[5026, 128, 559, 9, 114, "Output"]
+Cell[580, 22, 4506, 105, 935, "Input"],
+Cell[5089, 129, 580, 9, 154, "Output"]
 }, Open  ]]
 }
 ]

@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3484,        101]
-NotebookOptionsPosition[      3176,         86]
-NotebookOutlinePosition[      3514,        101]
-CellTagsIndexPosition[      3471,         98]
+NotebookDataLength[      3920,        116]
+NotebookOptionsPosition[      3543,         98]
+NotebookOutlinePosition[      3880,        113]
+CellTagsIndexPosition[      3837,        110]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
@@ -25,58 +27,68 @@ Cell[BoxData[{
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"CRT", "[", 
-    RowBox[{"modList_", ",", "valueList_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "i", ",", "len", ",", "mod", ",", "val", ",", "nextMod", ",", "nextVal",
-        ",", "invMod"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CRT", "[", 
+     RowBox[{"modList_", ",", "valueList_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
      RowBox[{
-      RowBox[{"len", "=", 
-       RowBox[{"Length", "[", "modList", "]"}]}], ";", "\[IndentingNewLine]", 
-      
-      RowBox[{"mod", "=", 
-       RowBox[{"modList", "[", 
-        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"val", "=", 
-       RowBox[{"valueList", "[", 
-        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"For", "[", 
+      RowBox[{"{", 
        RowBox[{
-        RowBox[{"i", "=", "2"}], ",", 
-        RowBox[{"i", "\[LessEqual]", "len"}], ",", 
-        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       "i", ",", "len", ",", "mod", ",", "val", ",", "nextMod", ",", 
+        "nextVal", ",", "invMod"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"len", "=", 
+        RowBox[{"Length", "[", "modList", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"mod", "=", 
+        RowBox[{"modList", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"val", "=", 
+        RowBox[{"valueList", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
         RowBox[{
-         RowBox[{"nextMod", "=", 
-          RowBox[{"modList", "[", 
-           RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"nextVal", "=", 
-          RowBox[{"valueList", "[", 
-           RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"invMod", "=", 
-          RowBox[{"PowerMod", "[", 
-           RowBox[{"nextMod", ",", 
-            RowBox[{"-", "1"}], ",", "mod"}], "]"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"mod", "*=", "nextMod"}], ";", "\[IndentingNewLine]", 
-         RowBox[{"val", "=", 
-          RowBox[{"Mod", "[", 
-           RowBox[{
-            RowBox[{"nextVal", "+", 
-             RowBox[{"nextMod", "*", "invMod", "*", 
-              RowBox[{"(", 
-               RowBox[{"val", "-", "nextVal"}], ")"}]}]}], ",", "mod"}], 
-           "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Return", "[", "val", "]"}], ";"}]}], "\[IndentingNewLine]", 
-    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "len"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nextMod", "=", 
+           RowBox[{"modList", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"nextVal", "=", 
+           RowBox[{"valueList", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"invMod", "=", 
+           RowBox[{"Inv", "[", 
+            RowBox[{"nextMod", ",", "mod"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"mod", "*=", "nextMod"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"val", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"nextVal", "+", 
+              RowBox[{"nextMod", "*", "invMod", "*", 
+               RowBox[{"(", 
+                RowBox[{"val", "-", "nextVal"}], ")"}]}]}], ",", "mod"}], 
+            "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "val", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"CRT", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]"}], "Input",\
+
  CellChangeTimes->{{3.6723042483137093`*^9, 3.672304251654026*^9}, {
    3.67230450437401*^9, 3.672304533421164*^9}, {3.672304576793456*^9, 
    3.672304598986698*^9}, 3.672306209616507*^9, {3.672306627258462*^9, 
    3.6723066371305017`*^9}, {3.6723067281127787`*^9, 3.6723067395674887`*^9}, 
-   3.672307022287878*^9}],
+   3.672307022287878*^9, {3.672368763840618*^9, 3.672368793591271*^9}}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{3.6723687942999363`*^9}]
+}, Open  ]],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.6723045308619843`*^9, 3.672304531556864*^9}}],
@@ -85,7 +97,7 @@ Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.672304529483354*^9, 3.67230453000508*^9}}]
 },
 WindowSize->{828, 904},
-WindowMargins->{{1082, Automatic}, {9, Automatic}},
+WindowMargins->{{Automatic, 35}, {Automatic, 52}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -100,9 +112,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2423, 58, 396, "Input"],
-Cell[2984, 80, 94, 1, 32, "Input"],
-Cell[3081, 83, 91, 1, 32, "Input"]
+Cell[CellGroupData[{
+Cell[580, 22, 2681, 64, 407, "Input"],
+Cell[3264, 88, 72, 1, 32, "Output"]
+}, Open  ]],
+Cell[3351, 92, 94, 1, 32, "Input"],
+Cell[3448, 95, 91, 1, 32, "Input"]
 }
 ]
 *)

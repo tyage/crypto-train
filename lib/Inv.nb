@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2063,         74]
-NotebookOptionsPosition[      1756,         58]
-NotebookOutlinePosition[      2095,         73]
-CellTagsIndexPosition[      2052,         70]
+NotebookDataLength[      2115,         75]
+NotebookOptionsPosition[      1807,         59]
+NotebookOutlinePosition[      2146,         74]
+CellTagsIndexPosition[      2103,         71]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -53,11 +53,12 @@ Cell[BoxData[{
   3.67236875558351*^9}}],
 
 Cell[BoxData["2"], "Output",
- CellChangeTimes->{3.672368756276568*^9}]
+ CellChangeTimes->{
+  3.672368756276568*^9, {3.672372395429099*^9, 3.6723724227184763`*^9}}]
 }, Open  ]]
 },
 WindowSize->{828, 926},
-WindowMargins->{{Automatic, 831}, {-81, Automatic}},
+WindowMargins->{{Automatic, 295}, {-14, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -74,7 +75,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 1087, 30, 253, "Input"],
-Cell[1670, 54, 70, 1, 32, "Output"]
+Cell[1670, 54, 121, 2, 65, "Output"]
 }, Open  ]]
 }
 ]

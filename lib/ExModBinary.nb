@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5996,        157]
-NotebookOptionsPosition[      5685,        141]
-NotebookOutlinePosition[      6024,        156]
-CellTagsIndexPosition[      5981,        153]
+NotebookDataLength[      6025,        158]
+NotebookOptionsPosition[      5713,        142]
+NotebookOutlinePosition[      6052,        157]
+CellTagsIndexPosition[      6009,        154]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -117,7 +117,7 @@ Cell[BoxData[{
 982474007414256278367541365120102441738442479235536228759080267197653116363308\
 565847410799463834787187403054790304127798316363741018562315240667128497172090\
 6981652602780728968566018316270266546308856591434093339991506"}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{"ExModBinary", "[", 
   RowBox[{"k1", ",", "g1", ",", "k2", ",", "g2", ",", "p1"}], "]"}]}], "Input",\
 
@@ -136,11 +136,12 @@ Cell[BoxData[\
  CellChangeTimes->{
   3.670649606310273*^9, 3.670649654160613*^9, 3.670649697188633*^9, 
    3.670649746573812*^9, 3.6706498007401733`*^9, 3.6706498339883204`*^9, {
-   3.671186773379018*^9, 3.671186822372896*^9}, 3.67236905495461*^9}]
+   3.671186773379018*^9, 3.671186822372896*^9}, 3.67236905495461*^9, 
+   3.6723723842919416`*^9}]
 }, Open  ]]
 },
 WindowSize->{808, 751},
-WindowMargins->{{Automatic, -173}, {Automatic, 41}},
+WindowMargins->{{Automatic, -173}, {Automatic, 19}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -157,7 +158,7 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 4506, 105, 935, "Input"],
-Cell[5089, 129, 580, 9, 154, "Output"]
+Cell[5089, 129, 608, 10, 154, "Output"]
 }, Open  ]]
 }
 ]

@@ -1,0 +1,69 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1667,         60]
+NotebookOptionsPosition[      1432,         47]
+NotebookOutlinePosition[      1770,         62]
+CellTagsIndexPosition[      1727,         59]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "RSADec", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RSADec", "[", 
+    RowBox[{
+    "c_", ",", "dp_", ",", "dq_", ",", "p_", ",", "q_", ",", "qInv_"}], "]"}],
+    ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Return", "[", 
+       RowBox[{"ModCRTBinary", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"dp", ",", "dq"}], "}"}], ",", "c", ",", 
+         RowBox[{"{", 
+          RowBox[{"p", ",", "q"}], "}"}]}], "]"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.672370464953703*^9, 3.672370466500846*^9}, {
+  3.672370500684824*^9, 3.67237054310281*^9}, {3.672371098553171*^9, 
+  3.672371153906039*^9}}]
+},
+WindowSize->{828, 865},
+WindowMargins->{{Automatic, -1}, {-46, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 870, 25, 154, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

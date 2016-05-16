@@ -10,38 +10,44 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1573,         55]
-NotebookOptionsPosition[      1339,         42]
-NotebookOutlinePosition[      1676,         57]
-CellTagsIndexPosition[      1633,         54]
+NotebookDataLength[      1874,         61]
+NotebookOptionsPosition[      1640,         48]
+NotebookOutlinePosition[      1976,         63]
+CellTagsIndexPosition[      1933,         60]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "Load", "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"Load", "[", "filename_", "]"}], ":=", 
-    RowBox[{"Module", "[", 
+   RowBox[{"Load", "[", "filename_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"nb", ",", "path"}], "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"{", "nb", "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"nb", "=", 
-        RowBox[{"NotebookOpen", "[", "filename", "]"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"SelectionMove", "[", 
-        RowBox[{"nb", ",", "All", ",", "Notebook"}], "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"NotebookClose", "[", "filename", "]"}], ";"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",\
-
- CellChangeTimes->{{3.672392722423382*^9, 3.672392725261114*^9}}]
+      RowBox[{"path", "=", 
+       RowBox[{"\"\<./crypto-train/\>\"", "<>", "filename"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nb", "=", 
+       RowBox[{"NotebookOpen", "[", "path", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{"nb", ",", "All", ",", "Notebook"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookClose", "[", "path", "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.672392722423382*^9, 3.672392725261114*^9}, {
+  3.672395268384672*^9, 3.672395322281892*^9}, {3.6723954220873957`*^9, 
+  3.672395440719461*^9}}]
 },
 WindowSize->{828, 856},
-WindowMargins->{{Automatic, 282}, {Automatic, 0}},
+WindowMargins->{{Automatic, 91}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -56,7 +62,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 777, 20, 198, "Input"]
+Cell[558, 20, 1078, 26, 209, "Input"]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3024,         90]
+NotebookDataLength[      3023,         90]
 NotebookOptionsPosition[      2750,         76]
-NotebookOutlinePosition[      3088,         91]
-CellTagsIndexPosition[      3045,         88]
+NotebookOutlinePosition[      3087,         91]
+CellTagsIndexPosition[      3044,         88]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -75,7 +75,7 @@ Cell[BoxData[
   3.6723715211630077`*^9, 3.6723717055315123`*^9}}]
 },
 WindowSize->{808, 856},
-WindowMargins->{{Automatic, 226}, {Automatic, 10}},
+WindowMargins->{{Automatic, 226}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]

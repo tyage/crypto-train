@@ -10,14 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1667,         60]
-NotebookOptionsPosition[      1432,         47]
-NotebookOutlinePosition[      1770,         62]
-CellTagsIndexPosition[      1727,         59]
+NotebookDataLength[      1962,         68]
+NotebookOptionsPosition[      1692,         54]
+NotebookOutlinePosition[      2029,         69]
+CellTagsIndexPosition[      1986,         66]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/ModCRTBinary.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6723927642750874`*^9, 3.672392776333785*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{
@@ -43,10 +50,10 @@ Cell[BoxData[{
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.672370464953703*^9, 3.672370466500846*^9}, {
   3.672370500684824*^9, 3.67237054310281*^9}, {3.672371098553171*^9, 
-  3.672371153906039*^9}}]
+  3.672371153906039*^9}, {3.672392761117285*^9, 3.672392762980749*^9}}]
 },
-WindowSize->{828, 865},
-WindowMargins->{{Automatic, -1}, {-46, Automatic}},
+WindowSize->{828, 856},
+WindowMargins->{{Automatic, -1}, {Automatic, 37}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -61,7 +68,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 870, 25, 154, "Input"]
+Cell[558, 20, 211, 5, 55, "Input"],
+Cell[772, 27, 916, 25, 121, "Input"]
 }
 ]
 *)

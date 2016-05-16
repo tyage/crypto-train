@@ -10,18 +10,26 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2732,         82]
-NotebookOptionsPosition[      2460,         68]
-NotebookOutlinePosition[      2798,         83]
-CellTagsIndexPosition[      2755,         80]
+NotebookDataLength[      3024,         90]
+NotebookOptionsPosition[      2750,         76]
+NotebookOutlinePosition[      3088,         91]
+CellTagsIndexPosition[      3045,         88]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"Clear", "[", "ModCRTBinary", "]"}], ";"}]], "Input",
- CellChangeTimes->{{3.67237122453961*^9, 3.672371230689168*^9}}],
+  RowBox[{"Load", "[", "\"\<./lib/ModBinary.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/CRT.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "ModCRTBinary", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.67237122453961*^9, 3.672371230689168*^9}, {
+  3.672392785280134*^9, 3.672392801838142*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -66,8 +74,8 @@ Cell[BoxData[
   3.6723714109616213`*^9}, {3.6723714736143847`*^9, 3.672371476151699*^9}, {
   3.6723715211630077`*^9, 3.6723717055315123`*^9}}]
 },
-WindowSize->{808, 933},
-WindowMargins->{{Automatic, 226}, {Automatic, 32}},
+WindowSize->{808, 856},
+WindowMargins->{{Automatic, 226}, {Automatic, 10}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -82,8 +90,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 152, 3, 32, "Input"],
-Cell[713, 25, 1743, 41, 308, "Input"]
+Cell[558, 20, 442, 11, 99, "Input"],
+Cell[1003, 33, 1743, 41, 275, "Input"]
 }
 ]
 *)

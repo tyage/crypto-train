@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5547,        149]
+NotebookOptionsPosition[      5236,        133]
+NotebookOutlinePosition[      5575,        148]
+CellTagsIndexPosition[      5532,        145]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "ModBinaryExp", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ModBinaryExp", "[", 
+     RowBox[{"k_", ",", "g_", ",", "p_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "kBin", ",", "y", ",", "l", ",", "i", ",", "pBit", ",", "modCount"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"kBin", "=", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"k", ",", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"y", "=", "g"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"l", "=", 
+        RowBox[{"Length", "[", "kBin", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"modCount", "=", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "<=", "l"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"kBin", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "1"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"y", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Mod", "[", 
+                  RowBox[{
+                   RowBox[{"y", "^", "2"}], ",", "p"}], "]"}], "*", "g"}], 
+                ",", "p"}], "]"}]}], ";", 
+             RowBox[{"modCount", "+=", "1.8"}], ";"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"y", "=", 
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"y", "^", "2"}], ",", "p"}], "]"}]}], ";", 
+             RowBox[{"modCount", "+=", "0.8"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"pBit", "=", 
+        RowBox[{"BitLength", "[", "p", "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"pBit", ",", "modCount"}], "}"}], ",", "y"}], "}"}], "]"}],
+        ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]",
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "p1", "=", 
+   "17976931348623159077083915679378745319786029604875601170644442368419718021\
+615851936894783379586492554150218056548598050364644054819923910005079287700335\
+581663922955313623907650873575991482257486257500742530207744771258955095793777\
+842444242661733472762929938766870920560605027081084290769293201912819446762700\
+7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g1", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "k1", "=", 
+   "21378582330649381417469692753984792914127976226092048532580481084871644119\
+000600141534929037897951342787125074054008389229149956876406489134126529473802\
+073749006458927006539915539009546170378468358492975326911090841687069786303767\
+086802217655374115072258330322914047273550235690898518749239"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ModBinaryExp", "[", 
+   RowBox[{"k1", ",", "g1", ",", "p1"}], "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6724719962483797`*^9, 3.672471997001429*^9}, {
+  3.6724720400259447`*^9, 3.6724720634436626`*^9}, {3.672472174869237*^9, 
+  3.672472223740196*^9}, {3.672472253837905*^9, 3.672472261729851*^9}, {
+  3.672473728785904*^9, 3.6724737678803453`*^9}, {3.672476653649632*^9, 
+  3.6724766712846003`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1024", ",", "1227.799999999978`"}], "}"}], ",", 
+   "13521423718138082648495698372861138541183259043064644858172303183938170981\
+778743570280893695849464533906849672775529154315181053041184820228377441358189\
+866188108788279219379873263299526650210711075806066622902450524533574159325211\
+422137820440310891461784523941554128247684833420521879302280119921174692393098\
+6"}], "}"}]], "Output",
+ CellChangeTimes->{{3.672472235190002*^9, 3.672472263846712*^9}, {
+  3.672472816224712*^9, 3.672472816933742*^9}, {3.6724729469261703`*^9, 
+  3.672472954989584*^9}, {3.672473789390129*^9, 3.6724737909047318`*^9}, {
+  3.672474430560405*^9, 3.6724744318815193`*^9}, {3.672478503043726*^9, 
+  3.672478504256707*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 773},
+WindowMargins->{{Automatic, 966}, {Automatic, 117}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3861, 92, 847, "Input"],
+Cell[4444, 116, 776, 14, 143, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

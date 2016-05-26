@@ -1,0 +1,172 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6219,        163]
+NotebookOptionsPosition[      5981,        150]
+NotebookOutlinePosition[      6320,        165]
+CellTagsIndexPosition[      6277,        162]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<lib/HexStringtoCharacters.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<lib/ModBinary.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<lib/Inv.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SchnorrKeyGen", "[", 
+    RowBox[{"g_", ",", "x_", ",", "p_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Return", "[", 
+       RowBox[{"Inv", "[", 
+        RowBox[{
+         RowBox[{"ModBinary", "[", 
+          RowBox[{"x", ",", "g", ",", "p"}], "]"}], ",", "p"}], "]"}], "]"}], 
+      ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SchnorrSign", "[", 
+    RowBox[{"m_", ",", "x_", ",", "g_", ",", "l_", ",", "r_", ",", "p_"}], 
+    "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"u", ",", "pLen", ",", "e", ",", "v"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"u", "=", 
+       RowBox[{"ModBinary", "[", 
+        RowBox[{"r", ",", "g", ",", "p"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"pLen", "=", 
+       RowBox[{"Ceiling", "[", 
+        RowBox[{
+         RowBox[{"BitLength", "[", "p", "]"}], "/", "8"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rawE", "=", 
+       RowBox[{
+        RowBox[{"HexStringtoCharacters", "[", 
+         RowBox[{"IntegerString", "[", 
+          RowBox[{"u", ",", "16", ",", 
+           RowBox[{"2", "*", "pLen"}]}], "]"}], "]"}], "<>", "m"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"e", "=", 
+       RowBox[{"Hash", "[", 
+        RowBox[{"rawE", ",", "\"\<SHA1\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"v", "=", 
+       RowBox[{"Mod", "[", 
+        RowBox[{
+         RowBox[{"r", "+", 
+          RowBox[{"x", "*", "e"}]}], ",", "l"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{"e", ",", "v"}], "}"}], "]"}], ";"}]}], "\[IndentingNewLine]",
+     "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SchnorrVerify", "[", 
+     RowBox[{"signature_", ",", "m_", ",", "y_", ",", "g_", ",", "p_"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"e", ",", "v", ",", "u", ",", "rawE", ",", "eVerify"}], "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"e", "=", 
+        RowBox[{"signature", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"v", "=", 
+        RowBox[{"signature", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"u", "=", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ModBinary", "[", 
+            RowBox[{"v", ",", "g", ",", "p"}], "]"}], "*", 
+           RowBox[{"ModBinary", "[", 
+            RowBox[{"e", ",", "y", ",", "p"}], "]"}]}], ",", "p"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"rawE", "=", 
+        RowBox[{
+         RowBox[{"HexStringtoCharacters", "[", 
+          RowBox[{"IntegerString", "[", 
+           RowBox[{"u", ",", "16", ",", 
+            RowBox[{"2", "*", "pLen"}]}], "]"}], "]"}], "<>", "m"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"eVerify", "=", 
+        RowBox[{"Hash", "[", 
+         RowBox[{"rawE", ",", "\"\<SHA1\>\""}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"e", "==", "eVerify"}], "]"}], ";"}]}], "\[IndentingNewLine]",
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6729223217707663`*^9, 3.672922420981739*^9}, {
+   3.672922828064098*^9, 3.67292283591166*^9}, {3.672922901989356*^9, 
+   3.672922971675118*^9}, {3.672923162388588*^9, 3.672923319431705*^9}, {
+   3.672923372310493*^9, 3.6729236092856693`*^9}, {3.672923655172985*^9, 
+   3.672923657004517*^9}, {3.672924262431943*^9, 3.672924289767198*^9}, {
+   3.672924446914115*^9, 3.672924473152618*^9}, {3.6729245822617607`*^9, 
+   3.672924598092111*^9}, {3.672924665186832*^9, 3.672924681466168*^9}, {
+   3.672924713320312*^9, 3.672924859747785*^9}, {3.672924900266638*^9, 
+   3.672924901745706*^9}, {3.67292500105536*^9, 3.67292505638095*^9}, {
+   3.672925257862537*^9, 3.672925281797213*^9}, {3.6729262909079037`*^9, 
+   3.6729263193871527`*^9}, {3.67292638467247*^9, 3.672926414831697*^9}, {
+   3.672926488445434*^9, 3.672926512772204*^9}, {3.672926546219344*^9, 
+   3.672926553410774*^9}, 3.672926605449651*^9, {3.6729266379923487`*^9, 
+   3.672926656120562*^9}, {3.67305447539526*^9, 3.673054476362018*^9}, 
+   3.673055422467862*^9, {3.673062469754382*^9, 3.6730625037086763`*^9}, {
+   3.673217901788513*^9, 3.67321791020936*^9}, {3.673219001538228*^9, 
+   3.6732190276166677`*^9}, {3.673219073063861*^9, 3.673219187011983*^9}, {
+   3.673219248497903*^9, 3.673219332087681*^9}, {3.673219397798086*^9, 
+   3.673219487474592*^9}, {3.673219521601412*^9, 3.673219752194487*^9}, {
+   3.6732206452629128`*^9, 3.673220646526968*^9}, {3.673222215070125*^9, 
+   3.67322227437157*^9}, {3.673222437474186*^9, 3.673222438854624*^9}}]
+},
+WindowSize->{808, 861},
+WindowMargins->{{Automatic, 1026}, {Automatic, 29}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5419, 128, 583, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

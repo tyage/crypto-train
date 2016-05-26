@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2161,         76]
-NotebookOptionsPosition[      1855,         60]
-NotebookOutlinePosition[      2192,         75]
-CellTagsIndexPosition[      2149,         72]
+NotebookDataLength[      2417,         81]
+NotebookOptionsPosition[      2110,         65]
+NotebookOutlinePosition[      2448,         80]
+CellTagsIndexPosition[      2405,         77]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,6 +24,10 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"Clear", "[", "Inv", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<lib/ExEuclid.nb\>\"", "]"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -50,16 +54,17 @@ Cell[BoxData[{
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.67236854999096*^9, 3.672368579102704*^9}, {
   3.6723686584620047`*^9, 3.6723686651461287`*^9}, {3.6723686995459013`*^9, 
-  3.67236875558351*^9}}],
+  3.67236875558351*^9}, {3.673222289122241*^9, 3.673222301138377*^9}}],
 
-Cell[BoxData["0"], "Output",
+Cell[BoxData["2"], "Output",
  CellChangeTimes->{
   3.672368756276568*^9, {3.672372395429099*^9, 3.6723724227184763`*^9}, 
-   3.672393424356452*^9, 3.672395445318569*^9}]
+   3.672393424356452*^9, 3.672395445318569*^9, {3.673222264937303*^9, 
+   3.67322230423857*^9}, 3.673222334705522*^9}]
 }, Open  ]]
 },
 WindowSize->{828, 856},
-WindowMargins->{{Automatic, 295}, {Automatic, 0}},
+WindowMargins->{{Automatic, 285}, {Automatic, 14}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -75,8 +80,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1087, 30, 253, "Input"],
-Cell[1670, 54, 169, 3, 32, "Output"]
+Cell[580, 22, 1271, 34, 297, "Input"],
+Cell[1854, 58, 240, 4, 32, "Output"]
 }, Open  ]]
 }
 ]

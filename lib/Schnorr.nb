@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6219,        163]
-NotebookOptionsPosition[      5981,        150]
-NotebookOutlinePosition[      6320,        165]
-CellTagsIndexPosition[      6277,        162]
+NotebookDataLength[      6474,        170]
+NotebookOptionsPosition[      6238,        157]
+NotebookOutlinePosition[      6575,        172]
+CellTagsIndexPosition[      6532,        169]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -93,8 +93,9 @@ Cell[BoxData[{
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
-       RowBox[{"e", ",", "v", ",", "u", ",", "rawE", ",", "eVerify"}], "}"}], 
-      ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "e", ",", "v", ",", "u", ",", "rawE", ",", "eVerify", ",", "pLen"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"e", "=", 
         RowBox[{"signature", "[", 
@@ -111,6 +112,11 @@ Cell[BoxData[{
            RowBox[{"ModBinary", "[", 
             RowBox[{"e", ",", "y", ",", "p"}], "]"}]}], ",", "p"}], "]"}]}], 
        ";", "\[IndentingNewLine]", 
+       RowBox[{"pLen", "=", 
+        RowBox[{"Ceiling", "[", 
+         RowBox[{
+          RowBox[{"BitLength", "[", "p", "]"}], "/", "8"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"rawE", "=", 
         RowBox[{
          RowBox[{"HexStringtoCharacters", "[", 
@@ -146,10 +152,11 @@ Cell[BoxData[{
    3.673219248497903*^9, 3.673219332087681*^9}, {3.673219397798086*^9, 
    3.673219487474592*^9}, {3.673219521601412*^9, 3.673219752194487*^9}, {
    3.6732206452629128`*^9, 3.673220646526968*^9}, {3.673222215070125*^9, 
-   3.67322227437157*^9}, {3.673222437474186*^9, 3.673222438854624*^9}}]
+   3.67322227437157*^9}, {3.673222437474186*^9, 3.673222438854624*^9}, {
+   3.673604313181473*^9, 3.67360431688544*^9}}]
 },
-WindowSize->{808, 861},
-WindowMargins->{{Automatic, 1026}, {Automatic, 29}},
+WindowSize->{808, 856},
+WindowMargins->{{163, Automatic}, {Automatic, 7}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -164,7 +171,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 5419, 128, 583, "Input"]
+Cell[558, 20, 5676, 135, 627, "Input"]
 }
 ]
 *)

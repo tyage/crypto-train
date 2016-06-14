@@ -1,0 +1,126 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4078,        117]
+NotebookOptionsPosition[      3630,         96]
+NotebookOutlinePosition[      3965,        111]
+CellTagsIndexPosition[      3922,        108]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExModBinary16", "[", 
+    RowBox[{"k_", ",", "g_", ",", "p_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"kLen", ",", "m", ",", "k1", ",", "k2", ",", "g1"}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"kLen", "=", 
+       RowBox[{"BitLength", "[", "k", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"m", "=", 
+       RowBox[{"kLen", "/", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"g1", "=", 
+       RowBox[{"ModBinary", "[", 
+        RowBox[{
+         RowBox[{"2", "^", "m"}], ",", "g", ",", "p"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"k1", "=", 
+       RowBox[{"BitAnd", "[", 
+        RowBox[{"k", ",", 
+         RowBox[{
+          RowBox[{"2", "^", 
+           RowBox[{"(", 
+            RowBox[{"m", "+", "1"}], ")"}]}], "-", "1"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"k2", "=", 
+       RowBox[{"BitShiftRight", "[", 
+        RowBox[{"k", ",", "m"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "k1", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "k2", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "m", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"ExModBinary", "[", 
+        RowBox[{"k1", ",", "g", ",", "k2", ",", "g1", ",", "p"}], "]"}], 
+       "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ExModBinary16", "[", 
+  RowBox[{"55", ",", "3", ",", "20"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6739199737242193`*^9, 3.673919985137663*^9}, {
+   3.673920191532075*^9, 3.673920228251502*^9}, {3.673920261438115*^9, 
+   3.67392027868773*^9}, {3.673920315825046*^9, 3.6739203272317677`*^9}, {
+   3.673920395428505*^9, 3.67392042322171*^9}, {3.673920669831249*^9, 
+   3.6739207327678137`*^9}, {3.6739207752606583`*^9, 
+   3.6739208984599113`*^9}, {3.6739279295983953`*^9, 3.673927955094054*^9}, {
+   3.6739279854629602`*^9, 3.6739279956156693`*^9}, {3.673928102864441*^9, 
+   3.6739281109956617`*^9}, {3.673928450618985*^9, 3.673928469613092*^9}, {
+   3.673928541304792*^9, 3.673928553471077*^9}, {3.6739287506888933`*^9, 
+   3.6739287876484137`*^9}, {3.673928869033186*^9, 3.673928956029374*^9}, {
+   3.673929684768062*^9, 3.673929686275078*^9}, {3.673929725642243*^9, 
+   3.673929726700398*^9}, 3.673930289657082*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{3.673928971354471*^9, 3.673929688227139*^9, 
+  3.673929727125416*^9}],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->{3.673928971354471*^9, 3.673929688227139*^9, 
+  3.6739297271259613`*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.673928971354471*^9, 3.673929688227139*^9, 
+  3.673929727126399*^9}]
+}, Open  ]],
+
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{{3.6739288819200363`*^9, 3.673928902074189*^9}, 
+   3.673928971356262*^9, 3.6739296882285748`*^9, 3.6739297271268377`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 773},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2468, 52, 297, "Input"],
+Cell[CellGroupData[{
+Cell[3073, 78, 116, 2, 23, "Print"],
+Cell[3192, 82, 118, 2, 23, "Print"],
+Cell[3313, 86, 116, 2, 23, "Print"]
+}, Open  ]],
+Cell[3444, 91, 170, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

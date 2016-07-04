@@ -56,26 +56,18 @@ CellGroupData[{Cell[
 BoxData[{RowBox[
 {"m","=","{","}",";"}],"\n",RowBox[{"For","[","i","=","0",",","i","\[LessEqual]","k","-","1",",","i","+=","1",",","\n","row","=","{","}",";","\n","For","[","j","=","1",",","j","\[LessEqual]","k",",","j","+=","1",",","\n","index","=","vk","[","[","j","]","]","[","[","1","]","]",";","\n","AppendTo","[","row",",","PowerMod","[","index",",","i",",","q","]","]",";","\n","]",";","\n","AppendTo","[","m",",","row","]",";","\n","]",";"}],"\n",RowBox[
 {"vkvalues","=","{","}",";"}],"\n",RowBox[{"For","[","i","=","1",",","i","\[LessEqual]","k",",","i","+=","1",",","\n","AppendTo","[","vkvalues",",","vk","[","[","i","]","]","[","[","2","]","]","]",";","\n","]",";"}],"\n",RowBox[
-{"m"}],"\n",RowBox[{"invm","=","ModMatInverse","[","m",",","q","]",";"}],"\n",RowBox[
-{"ak","=","vkvalues",".","invm",";"}],"\n",RowBox[{"For","[","i","=","1",",","i","\[LessEqual]","Length","[","ak","]",",","i","+=","1",",","\n","Print","[","Mod","[","ak","[","[","i","]","]",",","q","]","]",";","\n","]",";","\n"}]}],
-"Input",CellID->112,CellLabel->"In[614]:= "],Cell[
-BoxData[RowBox[{"{",RowBox[{RowBox[
-{"{",RowBox[{"1",",","1",",","1",",","1",",","1",",","1"}],"}"}],",",RowBox[{"{",RowBox[
-{"14",",","15",",","33",",","54",",","88",",","92"}],"}"}],",",RowBox[{"{",RowBox[
-{"196",",","225",",","1089",",","2916",",","7744",",","8464"}],"}"}],",",RowBox[{"{",RowBox[
-{"2744",",","3375",",","35937",",","157464",",","681472",",","778688"}],"}"}],",",RowBox[
-{"{",RowBox[{"38416",",","50625",",","1185921",",","8503056",",","59969536",",","71639296"}],"}"}],",",RowBox[
-{"{",RowBox[{"537824",",","759375",",","39135393",",","459165024",",","5277319168",",","6590815232"}],"}"}]}],"}"}],
-StandardForm],"Output",CellID->391,CellLabel->"Out[618]= "],Cell[
+{"invm","=","ModMatInverse","[","m",",","q","]",";"}],"\n",RowBox[{"ak","=","vkvalues",".","invm",";"}],"\n",RowBox[
+{"For","[","i","=","1",",","i","\[LessEqual]","Length","[","ak","]",",","i","+=","1",",","\n","Print","[","Mod","[","ak","[","[","i","]","]",",","q","]","]",";","\n","]",";","\n"}]}],
+"Input",CellID->112,CellLabel->"In[622]:= "],Cell[
 BoxData["417479042958993742794699594486062112048871068462",
-StandardForm],"Print",CellID->393],Cell[
+StandardForm],"Print",CellID->401],Cell[
 BoxData["1166460200462228630015643321872333410662936530274",
-StandardForm],"Print",CellID->394],Cell[
+StandardForm],"Print",CellID->403],Cell[
 BoxData["1219930995300421826187683945589564366785042776093",
-StandardForm],"Print",CellID->395],Cell[
+StandardForm],"Print",CellID->404],Cell[
 BoxData["834977034019669004245636849170244450890738847842",
-StandardForm],"Print",CellID->396],Cell[
+StandardForm],"Print",CellID->405],Cell[
 BoxData["1061981678307431226868415528464534660747903903589",
-StandardForm],"Print",CellID->397],Cell[
+StandardForm],"Print",CellID->406],Cell[
 BoxData["1292257347839082711003381745311230655255862069192",
-StandardForm],"Print",CellID->398]},Open]]},StyleDefinitions->"Default.nb",FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]
+StandardForm],"Print",CellID->407]},Open]]},StyleDefinitions->"Default.nb",FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

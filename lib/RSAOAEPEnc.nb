@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5577,        143]
-NotebookOptionsPosition[      5341,        130]
-NotebookOutlinePosition[      5678,        145]
-CellTagsIndexPosition[      5635,        142]
+NotebookDataLength[      5950,        148]
+NotebookOptionsPosition[      5715,        135]
+NotebookOutlinePosition[      6051,        150]
+CellTagsIndexPosition[      6008,        147]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,32 +23,32 @@ Cell[BoxData[{
   RowBox[{"Load", "[", "\"\<./lib/RSAEnc.nb\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Load", "[", "\"\<./lib/RSADec.nb\>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Load", "[", "\"\<./lib/Inv.nb\>\"", "]"}], 
+  RowBox[{"Load", "[", "\"\<./lib/HexStringXor.nb\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"Load", "[", "\"\<./160701_mathematica_functions/MGF.m\>\"", "]"}],
     ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Clear", "[", "OAEPRSAEnc", "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"Clear", "[", "RSAOAEPEnc", "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"OAEPRSAEnc", "[", 
-     RowBox[{"m_", ",", "seed_", ",", "n_"}], "]"}], ":=", 
+    RowBox[{"RSAOAEPEnc", "[", 
+     RowBox[{"m_", ",", "mLen_", ",", " ", "n_", ",", "e_", ",", "r_"}], 
+     "]"}], ":=", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
        RowBox[{
-       "k", ",", "hLen", ",", "mLen", ",", "lHash", ",", "PS", ",", "DB", ",",
-         "dbMask", ",", "maskedDB", ",", "seedMask", ",", "maskedSeed", ",", 
-        "EM", ",", "c"}], "}"}], ",", "\[IndentingNewLine]", 
+       "k", ",", "hLen", ",", "lHash", ",", "PS", ",", "DB", ",", "dbMask", 
+        ",", "maskedDB", ",", "seedMask", ",", "maskedSeed", ",", "EM", ",", 
+        "c"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"k", "=", 
-        RowBox[{"StringLength", "[", "n", "]"}]}], ";", " ", 
+        RowBox[{"StringLength", "[", 
+         RowBox[{"IntegerString", "[", 
+          RowBox[{"n", ",", " ", "16"}], "]"}], "]"}]}], ";", " ", 
        RowBox[{"(*", " ", 
         RowBox[{
         "k", " ", "denotes", " ", "the", " ", "length", " ", "in", " ", 
@@ -59,8 +59,6 @@ Cell[BoxData[{
         RowBox[{
         "length", " ", "of", " ", "SHA1", " ", "hash", " ", "is", " ", "40"}],
          " ", "*)"}], "\[IndentingNewLine]", 
-       RowBox[{"mLen", "=", 
-        RowBox[{"StringLength", "[", "m", "]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{
        "lHash", "=", "\"\<da39a3ee5e6b4b0d3255bfef95601890afd80709\>\""}], 
        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -71,7 +69,8 @@ Cell[BoxData[{
        RowBox[{"PS", "=", 
         RowBox[{"IntegerString", "[", 
          RowBox[{"0", ",", "16", ",", 
-          RowBox[{"k", "-", "mLen", "-", 
+          RowBox[{"k", "-", 
+           RowBox[{"mLen", "*", "2"}], "-", 
            RowBox[{"2", "*", "hLen"}], "-", "4"}]}], "]"}]}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"DB", "=", 
@@ -79,12 +78,12 @@ Cell[BoxData[{
        "\[IndentingNewLine]", 
        RowBox[{"dbMask", "=", 
         RowBox[{"MGF", "[", 
-         RowBox[{"seed", ",", 
+         RowBox[{"r", ",", 
           RowBox[{
            RowBox[{"StringLength", "[", "DB", "]"}], "/", "2"}]}], "]"}]}], 
        ";", "\[IndentingNewLine]", 
        RowBox[{"maskedDB", "=", 
-        RowBox[{"XorHexString", "[", 
+        RowBox[{"HexStringXor", "[", 
          RowBox[{"DB", ",", " ", "dbMask", ",", 
           RowBox[{
            RowBox[{"(", 
@@ -99,8 +98,8 @@ Cell[BoxData[{
          RowBox[{"maskedDB", ",", 
           RowBox[{"hLen", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"maskedSeed", "=", 
-        RowBox[{"XorHexString", "[", 
-         RowBox[{"seed", ",", "seedMask", ",", 
+        RowBox[{"HexStringXor", "[", 
+         RowBox[{"r", ",", "seedMask", ",", 
           RowBox[{"hLen", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", " ", 
@@ -113,23 +112,29 @@ Cell[BoxData[{
         RowBox[{"RSAEnc", "[", 
          RowBox[{
           RowBox[{"FromDigits", "[", 
-           RowBox[{"EM", ",", "16"}], "]"}], ",", "nnum", ",", "e"}], "]"}]}],
-        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{"EM", ",", "16"}], "]"}], ",", "n", ",", "e"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Return", "[", 
         RowBox[{"IntegerString", "[", 
          RowBox[{"c", ",", "16"}], "]"}], "]"}], ";"}]}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.677548837592928*^9, 3.67754885656787*^9}, {
-  3.6775488867956963`*^9, 3.677548894570068*^9}, {3.677549264596101*^9, 
-  3.6775493420062323`*^9}, {3.6775493722033987`*^9, 3.677549372938126*^9}, {
-  3.677549564772066*^9, 3.677549586224547*^9}, {3.677549626952993*^9, 
-  3.677549638389139*^9}, {3.6775496711007557`*^9, 3.677549702065486*^9}, {
-  3.6775497351200743`*^9, 3.677549740683072*^9}, {3.677549777065134*^9, 
-  3.677549781500362*^9}, {3.677554645828052*^9, 3.677554650347735*^9}}]
+   3.6775488867956963`*^9, 3.677548894570068*^9}, {3.677549264596101*^9, 
+   3.6775493420062323`*^9}, {3.6775493722033987`*^9, 3.677549372938126*^9}, {
+   3.677549564772066*^9, 3.677549586224547*^9}, {3.677549626952993*^9, 
+   3.677549638389139*^9}, {3.6775496711007557`*^9, 3.677549702065486*^9}, {
+   3.6775497351200743`*^9, 3.677549740683072*^9}, {3.677549777065134*^9, 
+   3.677549781500362*^9}, {3.677554645828052*^9, 3.677554650347735*^9}, {
+   3.677661185787087*^9, 3.677661226394595*^9}, {3.6776612575326147`*^9, 
+   3.677661275609891*^9}, 3.677661314385334*^9, {3.6776613487552834`*^9, 
+   3.677661350496903*^9}, {3.677661423132267*^9, 3.677661453726727*^9}, {
+   3.677661509790085*^9, 3.6776615276535397`*^9}, {3.677661603941621*^9, 
+   3.677661604089219*^9}, {3.677661907005663*^9, 3.677661909249816*^9}, {
+   3.677663837363826*^9, 3.677663837732181*^9}, 3.677667899888526*^9}]
 },
 WindowSize->{1054, 856},
-WindowMargins->{{Automatic, 49}, {Automatic, 0}},
+WindowMargins->{{7, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -144,7 +149,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4779, 108, 715, "Input"]
+Cell[558, 20, 5153, 113, 671, "Input"]
 }
 ]
 *)

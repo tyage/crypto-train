@@ -1,0 +1,201 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6612,        192]
+NotebookOptionsPosition[      6085,        168]
+NotebookOutlinePosition[      6421,        183]
+CellTagsIndexPosition[      6378,        180]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"K", "=", "184221027786996110364334859372875060126"}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "p", "=", 
+    "1185308576313350599028620126936392113175536128220777180645421682390646304\
+595611040401851811887198856133219777001517545802509656687566394740423159704864\
+9687"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "q", "=", 
+    "1324147987978670006953767301340228371346130389501863872504371572833335118\
+253599179169873045490567956934304166091040110449999896454196868870936052877126\
+9943"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "n", "=", 
+    "1569523966459185029551938347187763885068573992130192110569135670254477836\
+239534249810981003203717970373907135272000651080485043023478815057424612090417\
+644696580521004930630955567721591369643378478824332735675791585286253014152531\
+452397244114433931271481296105641957739405631844445869533307414718657483194578\
+41"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"e", "=", "16906953396398285955"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "d", "=", 
+    "7243120132745935591047182336681310111949960963979110069818521891729612390\
+489488632828361419263587738222314087129791193429476334875094896819992088555566\
+997541879113676029549180284349351662954698457159345837258301381051407142651390\
+27719788715269467483599026617823666098202900871395864967128743435198316095145"\
+}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "=", "788255724614721016190591162463944054696650907899"}], 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", "=", 
+    RowBox[{"IntegerString", "[", 
+     RowBox[{"K", ",", "16", ",", "32"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<m=\>\"", ",", "m"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"crypt", "=", 
+   RowBox[{"RSAOAEPEnc", "[", 
+    RowBox[{"m", ",", 
+     RowBox[{
+      RowBox[{"StringLength", "[", "m", "]"}], "/", "2"}], ",", "n", ",", "e",
+      ",", 
+     RowBox[{"IntegerString", "[", 
+      RowBox[{"r", ",", "16", ",", "40"}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<crypt=\>\"", ",", "crypt"}], "]"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.677661630698502*^9, 3.677661677388686*^9}, {
+  3.6776617267675056`*^9, 3.6776617582527647`*^9}, {3.677663872999606*^9, 
+  3.6776638730774117`*^9}, {3.677667531262538*^9, 3.677667565576622*^9}, {
+  3.677667653214677*^9, 3.6776677968371067`*^9}, {3.677667855370015*^9, 
+  3.677667879040298*^9}, {3.677667934661281*^9, 3.677667945316043*^9}, {
+  3.677668104429632*^9, 3.677668158593749*^9}, {3.6776682222665854`*^9, 
+  3.6776682267034273`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"m=\"\>", 
+   "\[InvisibleSpace]", "\<\"8a97adebda4bc65e072c25a870dd939e\"\>"}],
+  SequenceForm["m=", "8a97adebda4bc65e072c25a870dd939e"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.677667946792835*^9, 3.6776681137799892`*^9, {3.6776681447833357`*^9, 
+   3.677668159302507*^9}, 3.677668227713215*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"crypt=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"682f1cdd26076fb6c43cd9c66573e0b0f7fea2b7ae0baf692f43ae502c1202792d95921b1\
+fd8936e09a2592aee76076e5194f57e431e4c3729fd777fc281cb1b585308364287db2e163709c\
+6983d5ad923a55ec6386e3cda62730af1ffc4b804bc101653eec8adbb654a30d89bf3c52c41dbc\
+ebd887c5d88bb07c8a8cbcf70cb\"\>"}],
+  SequenceForm[
+  "crypt=", 
+   "682f1cdd26076fb6c43cd9c66573e0b0f7fea2b7ae0baf692f43ae502c1202792d95921b1f\
+d8936e09a2592aee76076e5194f57e431e4c3729fd777fc281cb1b585308364287db2e163709c6\
+983d5ad923a55ec6386e3cda62730af1ffc4b804bc101653eec8adbb654a30d89bf3c52c41dbce\
+bd887c5d88bb07c8a8cbcf70cb"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.677667946792835*^9, 3.6776681137799892`*^9, {3.6776681447833357`*^9, 
+   3.677668159302507*^9}, 3.6776682277260847`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.677661606502677*^9, 3.677661608333131*^9}, {
+  3.6776616395140467`*^9, 3.6776616600913143`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"RSAOAEPDec", "[", 
+    RowBox[{"crypt", ",", 
+     RowBox[{
+      RowBox[{"StringLength", "[", "m", "]"}], "/", "2"}], ",", 
+     RowBox[{"Mod", "[", 
+      RowBox[{"d", ",", 
+       RowBox[{"p", "-", "1"}]}], "]"}], ",", 
+     RowBox[{"Mod", "[", 
+      RowBox[{"d", ",", 
+       RowBox[{"q", "-", "1"}]}], "]"}], ",", "p", ",", "q", ",", 
+     RowBox[{"Inv", "[", 
+      RowBox[{"q", ",", "p"}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.677664187829362*^9, 3.677664198501355*^9}, {
+   3.677664236373747*^9, 3.6776642369466763`*^9}, {3.6776642896667547`*^9, 
+   3.677664360807061*^9}, {3.6776647852925*^9, 3.677664798096941*^9}, 
+   3.6776666899547777`*^9, {3.677666872010672*^9, 3.677666894920236*^9}, {
+   3.677668162982242*^9, 3.677668199329009*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"8a97adebda4bc65e072c25a870dd939e\"\>", ",", "True"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.677665346418005*^9, 3.677666885317741*^9, {3.6776681889684963`*^9, 
+   3.677668200033581*^9}, 3.677668230387719*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 856},
+WindowMargins->{{71, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2943, 74, 803, "Input"],
+Cell[CellGroupData[{
+Cell[3548, 100, 359, 8, 23, "Print"],
+Cell[3910, 110, 838, 17, 100, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[4775, 131, 145, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[4945, 137, 862, 20, 99, "Input"],
+Cell[5810, 159, 259, 6, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

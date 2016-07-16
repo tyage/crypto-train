@@ -1,0 +1,202 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7368,        193]
+NotebookOptionsPosition[      7092,        179]
+NotebookOutlinePosition[      7430,        194]
+CellTagsIndexPosition[      7387,        191]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<./lib/RSADec.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<./lib/HexStringXor.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<./160701_mathematica_functions/MGF.m\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{
+  3.677661947953309*^9, {3.677661982194151*^9, 3.677662044850629*^9}, {
+   3.677662081166779*^9, 3.6776621959445353`*^9}, {3.677662582753883*^9, 
+   3.677662593429734*^9}, 3.6776626999936647`*^9, {3.677662902144347*^9, 
+   3.677663041606501*^9}, {3.677663088617178*^9, 3.677663157028754*^9}, {
+   3.677663187579392*^9, 3.677663209694377*^9}, {3.677663240963677*^9, 
+   3.67766324761314*^9}, {3.677663301539757*^9, 3.677663540737883*^9}, {
+   3.6776635852760353`*^9, 3.677663703459401*^9}, {3.677663734538842*^9, 
+   3.677663745459124*^9}, {3.677663808425997*^9, 3.677663808520466*^9}, {
+   3.677663977234951*^9, 3.6776640970737333`*^9}, {3.6776641371163197`*^9, 
+   3.677664140137224*^9}, 3.6776641785975237`*^9, {3.677664373270157*^9, 
+   3.677664374511565*^9}, {3.677664837715247*^9, 3.677664950683856*^9}, {
+   3.6776649984847116`*^9, 3.677665010909588*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Clear", "[", "RSAOAEPDec", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RSAOAEPDec", "[", 
+      RowBox[{
+      "c_", ",", "mLen_", ",", "dp_", ",", "dq_", ",", "p_", ",", "q_", ",", 
+       "qInv_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "n", ",", "k", ",", "K", ",", "EM", ",", "hLen", ",", "maskedSeed", 
+         ",", "maskedDB", ",", "seedMask", ",", "r", ",", "dbMask", ",", "DB",
+          ",", "IHash"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"n", "=", 
+         RowBox[{"p", "*", "q"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"k", "=", 
+         RowBox[{"StringLength", "[", 
+          RowBox[{"IntegerString", "[", 
+           RowBox[{"n", ",", " ", "16"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"K", "=", 
+         RowBox[{"Inv", "[", 
+          RowBox[{"e", ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"p", "-", "1"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"q", "-", "1"}], ")"}]}]}], "]"}]}], ";", 
+        RowBox[{"EM", "=", 
+         RowBox[{"IntegerString", "[", 
+          RowBox[{
+           RowBox[{"RSADec", "[", 
+            RowBox[{
+             RowBox[{"FromDigits", "[", 
+              RowBox[{"c", ",", "16"}], "]"}], ",", "dp", ",", "dq", ",", "p",
+              ",", "q", ",", "qInv"}], "]"}], ",", "16", ",", "k"}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"hLen", "=", "40"}], ";", " ", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "length", " ", "of", " ", "SHA1", " ", "hash", " ", "is", " ", 
+          "40"}], " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"EM", "=", 
+          RowBox[{"\"\<00\>\"", "<>", "maskedSeed", "<>", "maskedDB"}]}], " ",
+          "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringTake", "[", 
+            RowBox[{"EM", ",", "2"}], "]"}], "!=", "\"\<00\>\""}], ",", 
+          RowBox[{"Return", "[", 
+           RowBox[{"{", 
+            RowBox[{"\"\<NG\>\"", ",", "False"}], "}"}], "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"maskedSeed", "=", 
+         RowBox[{"StringTake", "[", 
+          RowBox[{"EM", ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", 
+             RowBox[{"hLen", "+", "2"}]}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"maskedDB", "=", 
+         RowBox[{"StringTake", "[", 
+          RowBox[{"EM", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"hLen", "+", "3"}], ",", "k"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"seedMask", "=", 
+         RowBox[{"MGF", "[", 
+          RowBox[{"maskedDB", ",", 
+           RowBox[{"hLen", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        
+        RowBox[{"r", "=", 
+         RowBox[{"HexStringXor", "[", 
+          RowBox[{"maskedSeed", ",", "seedMask", ",", 
+           RowBox[{"hLen", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        
+        RowBox[{"dbMask", "=", 
+         RowBox[{"MGF", "[", 
+          RowBox[{"r", ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"k", "-", "hLen", "-", "2"}], ")"}], "/", "2"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"DB", "=", 
+         RowBox[{"HexStringXor", "[", 
+          RowBox[{"maskedDB", ",", "dbMask", ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"k", "-", "hLen", "-", "2"}], ")"}], "/", "2"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"DB", "=", 
+          RowBox[{"lHash", "<>", "PS", "<>", "\"\<01\>\"", "<>", "m"}]}], " ",
+          "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"IHash", "=", 
+         RowBox[{"StringTake", "[", 
+          RowBox[{"DB", ",", "hLen"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FromDigits", "[", 
+            RowBox[{
+             RowBox[{"StringTake", "[", 
+              RowBox[{"DB", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"hLen", "+", "1"}], ",", 
+                 RowBox[{"k", "-", 
+                  RowBox[{"mLen", "*", "2"}], "-", "hLen", "-", "2"}]}], 
+                "}"}]}], "]"}], ",", "16"}], "]"}], "!=", "1"}], ",", 
+          RowBox[{"Return", "[", 
+           RowBox[{"{", 
+            RowBox[{"\"\<NG\>\"", ",", "False"}], "}"}], "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"StringTake", "[", 
+            RowBox[{"DB", ",", 
+             RowBox[{
+              RowBox[{"-", "2"}], "*", "mLen"}]}], "]"}], ",", "True"}], 
+          "}"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.6776651584270144`*^9, 3.677665252119212*^9}, {
+  3.677665313850713*^9, 3.677665340779683*^9}}]
+},
+WindowSize->{1054, 856},
+WindowMargins->{{Automatic, -86}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1236, 22, 99, "Input"],
+Cell[1797, 44, 5291, 133, 561, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

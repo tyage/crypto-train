@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6116,        158]
-NotebookOptionsPosition[      5697,        138]
-NotebookOutlinePosition[      6035,        153]
-CellTagsIndexPosition[      5992,        150]
+NotebookDataLength[      6257,        160]
+NotebookOptionsPosition[      5838,        140]
+NotebookOutlinePosition[      6175,        155]
+CellTagsIndexPosition[      6132,        152]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -120,7 +120,8 @@ Cell[BoxData[\
    3.671184441814126*^9, 3.671184798638687*^9, 3.672293710102585*^9, 
    3.6723115882038927`*^9, 3.672368933524046*^9, 3.672372371668456*^9, 
    3.6723934252096777`*^9, 3.6723954458402243`*^9, 3.67360481554255*^9, 
-   3.677544463366572*^9, 3.6775497481060143`*^9, 3.677549784662045*^9}]
+   3.677544463366572*^9, 3.6775497481060143`*^9, 3.677549784662045*^9, 
+   3.677661545968988*^9, 3.6776643403325243`*^9, 3.677664376478973*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -133,11 +134,12 @@ Cell[BoxData[
 Cell[BoxData["y"], "Print",
  CellChangeTimes->{3.6723934252613993`*^9, 3.672395445881774*^9, 
   3.673604815550393*^9, 3.6775444634146767`*^9, 3.677549748120759*^9, 
-  3.677549784675653*^9}]
+  3.677549784675653*^9, 3.677661546002801*^9, 3.677664340343416*^9, 
+  3.677664376495407*^9}]
 }, Open  ]]
 },
 WindowSize->{808, 751},
-WindowMargins->{{567, Automatic}, {68, Automatic}},
+WindowMargins->{{Automatic, 65}, {Automatic, 37}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -154,11 +156,11 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 3760, 84, 715, "Input"],
-Cell[4343, 108, 996, 14, 121, "Output"]
+Cell[4343, 108, 1068, 15, 121, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5376, 127, 113, 3, 55, "Input"],
-Cell[5492, 132, 189, 3, 23, "Print"]
+Cell[5448, 128, 113, 3, 55, "Input"],
+Cell[5564, 133, 258, 4, 23, "Print"]
 }, Open  ]]
 }
 ]

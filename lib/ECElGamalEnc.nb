@@ -1,0 +1,57 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1356,         48]
+NotebookOptionsPosition[      1122,         35]
+NotebookOutlinePosition[      1460,         50]
+CellTagsIndexPosition[      1417,         47]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ECElGamalEnc", "[", 
+    RowBox[{
+    "m_", ",", "a_", ",", "x0_", ",", "y0_", ",", "pubx_", ",", "puby_", ",", 
+     "p_", ",", "r_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ","}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.677461247523443*^9, 3.677461248221837*^9}, {
+  3.677461327223258*^9, 3.677461337368271*^9}, {3.6774613675328836`*^9, 
+  3.677461368110058*^9}, {3.6774614079299583`*^9, 3.677461452748982*^9}}]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 216}, {Automatic, 54}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 560, 13, 77, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

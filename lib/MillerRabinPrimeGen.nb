@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3862,        109]
+NotebookOptionsPosition[      3519,         92]
+NotebookOutlinePosition[      3857,        107]
+CellTagsIndexPosition[      3814,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/MillerRabinJudge.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MillerRabinPrimeGen", "[", 
+    RowBox[{"nBitLen_", ",", "k_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"rand", ",", "i", ",", "isPrime"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{"True", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"rand", "=", 
+          RowBox[{"RandomInteger", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Power", "[", 
+              RowBox[{"2", ",", 
+               RowBox[{"nBitLen", "-", "1"}]}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Power", "[", 
+               RowBox[{"2", ",", "nBitLen"}], "]"}], "-", "1"}]}], "}"}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"isPrime", "=", "True"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", "1"}], ",", 
+           RowBox[{"i", "\[LessEqual]", "k"}], ",", 
+           RowBox[{"i", "+=", "1"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"Not", "[", 
+               RowBox[{"MillerRabinJudge", "[", 
+                RowBox[{"rand", ",", 
+                 RowBox[{"Prime", "[", "i", "]"}]}], "]"}], "]"}], ",", 
+              RowBox[{"isPrime", "=", "False"}]}], "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{"isPrime", ",", 
+           RowBox[{"Return", "[", "rand", "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.67813677628197*^9, 3.678136788674061*^9}, {
+   3.67813682135376*^9, 3.67813683454243*^9}, {3.678136884567561*^9, 
+   3.6781368872264633`*^9}, {3.678136921841251*^9, 3.6781370067789516`*^9}, {
+   3.678137038005517*^9, 3.6781370385896072`*^9}, {3.678137078381267*^9, 
+   3.6781371332405024`*^9}, {3.678137165067288*^9, 3.6781373239112577`*^9}, {
+   3.678137355514027*^9, 3.678137355874693*^9}, {3.6781375426908493`*^9, 
+   3.6781375451680403`*^9}, 3.67813764574234*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MillerRabinPrimeGen", "[", 
+   RowBox[{"6", ",", "4"}], "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6781372766363583`*^9, 3.678137277570528*^9}, {
+   3.678137335894733*^9, 3.678137337604054*^9}, 3.6781373916021757`*^9, {
+   3.678137490904772*^9, 3.678137495462105*^9}, {3.678137526365344*^9, 
+   3.678137528114856*^9}, {3.678137572104253*^9, 3.678137652781464*^9}}],
+
+Cell[BoxData["41"], "Output",
+ CellChangeTimes->{{3.6781376557601347`*^9, 3.678137670614566*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 933},
+WindowMargins->{{Automatic, 264}, {Automatic, 24}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2400, 55, 297, "Input"],
+Cell[CellGroupData[{
+Cell[2983, 79, 420, 7, 55, "Input"],
+Cell[3406, 88, 97, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

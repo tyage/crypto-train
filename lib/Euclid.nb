@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2648,         85]
-NotebookOptionsPosition[      2342,         69]
-NotebookOutlinePosition[      2679,         84]
-CellTagsIndexPosition[      2636,         81]
+NotebookDataLength[      2884,         90]
+NotebookOptionsPosition[      2577,         74]
+NotebookOutlinePosition[      2915,         89]
+CellTagsIndexPosition[      2872,         86]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,7 +33,8 @@ Cell[BoxData[{
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
-       RowBox[{"big", ",", "small"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"big", ",", "small", ",", "tmp"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"If", "[", "\[IndentingNewLine]", 
         RowBox[{
@@ -44,31 +45,35 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"big", "=", "b"}], ";", 
           RowBox[{"small", "=", "a"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-       ";", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"small", " ", "\[Equal]", " ", "0"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"Return", "[", "big", "]"}], ",", "\[IndentingNewLine]", 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{"True", ",", "\[IndentingNewLine]", 
          RowBox[{
-          RowBox[{"Return", "[", 
-           RowBox[{"Euclid", "[", 
-            RowBox[{"small", ",", 
-             RowBox[{"Mod", "[", 
-              RowBox[{"big", ",", "small"}], "]"}]}], "]"}], "]"}], ";"}]}], 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"small", "\[Equal]", "0"}], ",", 
+            RowBox[{"Return", "[", "big", "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"tmp", "=", "big"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"big", "=", "small"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"small", "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{"tmp", ",", "small"}], "]"}]}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}],
     ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Euclid", "[", 
   RowBox[{"4", ",", "6"}], "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.672369432144712*^9, 3.672369470502268*^9}}],
+ CellChangeTimes->{{3.672369432144712*^9, 3.672369470502268*^9}, {
+  3.678776255937828*^9, 3.678776355572126*^9}}],
 
 Cell[BoxData["2"], "Output",
  CellChangeTimes->{3.672369471029574*^9, 3.672372389097386*^9, 
-  3.678152646259004*^9, 3.678155279971258*^9}]
+  3.678152646259004*^9, 3.678155279971258*^9, 3.67877403080937*^9, 
+  3.678776367793221*^9}]
 }, Open  ]]
 },
 WindowSize->{828, 821},
-WindowMargins->{{202, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 995}, {Automatic, 45}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -84,8 +89,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1604, 40, 385, "Input"],
-Cell[2187, 64, 139, 2, 32, "Output"]
+Cell[580, 22, 1793, 44, 429, "Input"],
+Cell[2376, 68, 185, 3, 65, "Output"]
 }, Open  ]]
 }
 ]

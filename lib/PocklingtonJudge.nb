@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3543,        102]
-NotebookOptionsPosition[      3235,         87]
-NotebookOutlinePosition[      3573,        102]
-CellTagsIndexPosition[      3530,         99]
+NotebookDataLength[      4202,        114]
+NotebookOptionsPosition[      3894,         99]
+NotebookOutlinePosition[      4232,        114]
+CellTagsIndexPosition[      4189,        111]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,67 +26,79 @@ Cell[BoxData[{
   RowBox[{"Load", "[", "\"\<./lib/Euclid.nb\>\"", "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.678152598043816*^9, 3.6781526447770452`*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "PocklingtonJudge", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"PocklingtonJudge", "[", 
-     RowBox[{"n_", ",", "R_", ",", "ps_"}], "]"}], ":=", 
-    RowBox[{"Module", "[", 
+   RowBox[{"PocklingtonJudge", "[", 
+    RowBox[{"n_", ",", "R_", ",", "ps_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"rootN", ",", "i"}], "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"{", 
-       RowBox[{"rootN", ",", "i"}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"rootN", "=", 
-        RowBox[{"Power", "[", 
-         RowBox[{"n", ",", 
-          RowBox[{"1", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
+      RowBox[{"rootN", "=", 
+       RowBox[{"Power", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"1", "/", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
         RowBox[{
          RowBox[{
+          RowBox[{"2", "*", "ps"}], "+", "1"}], "<=", "rootN"}], ",", 
+        RowBox[{"Return", "[", "False", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "2"}], ",", 
+        RowBox[{"i", "\[LessEqual]", "rootN"}], ",", 
+        RowBox[{"i", "+=", "1"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", "\[IndentingNewLine]", 
           RowBox[{
-           RowBox[{"2", "*", "ps"}], "+", "1"}], "<=", "rootN"}], ",", 
-         RowBox[{"Return", "[", "False", "]"}]}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"For", "[", 
-        RowBox[{
-         RowBox[{"i", "=", "2"}], ",", 
-         RowBox[{"i", "<=", "rootN"}], ",", 
-         RowBox[{"i", "+=", "1"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", "\[IndentingNewLine]", 
            RowBox[{
             RowBox[{
-             RowBox[{
-              RowBox[{"ModBinary", "[", 
-               RowBox[{
-                RowBox[{"n", "-", "1"}], ",", "i", ",", "n"}], "]"}], 
-              "\[Equal]", "1"}], "&&", 
-             RowBox[{
-              RowBox[{"Euclid", "[", 
-               RowBox[{
-                RowBox[{"Power", "[", 
-                 RowBox[{"i", ",", 
-                  RowBox[{"2", "*", "R"}]}], "]"}], ",", "n"}], "]"}], 
-              "\[Equal]", "1"}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{"ModBinary", "[", 
+              RowBox[{
+               RowBox[{"n", "-", "1"}], ",", "i", ",", "n"}], "]"}], 
+             "\[Equal]", "1"}], "&&", 
             RowBox[{
-             RowBox[{"Return", "[", "True", "]"}], ";"}]}], 
-           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
-        "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Return", "[", "False", "]"}], ";"}]}], "\[IndentingNewLine]", 
-     "]"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",
+             RowBox[{"Euclid", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ModBinary", "[", 
+                 RowBox[{
+                  RowBox[{"2", "*", "R"}], ",", "i", ",", "n"}], "]"}], "-", 
+                "1"}], ",", "n"}], "]"}], "\[Equal]", "1"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Return", "[", "True", "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "False", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.6781526165863667`*^9, 3.6781526492266607`*^9}, {
    3.6781527584230137`*^9, 3.678152832910438*^9}, {3.678152885777029*^9, 
    3.6781528954236927`*^9}, {3.678153057400262*^9, 3.678153127920423*^9}, 
    3.6781532537627277`*^9, {3.678153336444682*^9, 3.678153363867293*^9}, {
    3.6781534020782137`*^9, 3.6781535722086973`*^9}, {3.678153701558978*^9, 
-   3.678153787034068*^9}, {3.67815381847665*^9, 3.6781538425657187`*^9}}],
+   3.678153787034068*^9}, {3.67815381847665*^9, 3.6781538425657187`*^9}, {
+   3.6787753776395187`*^9, 3.678775389731834*^9}, 3.678775446656837*^9, {
+   3.6787754914648237`*^9, 3.678775515186755*^9}, {3.67877571065809*^9, 
+   3.6787757132085123`*^9}, {3.6787757692656803`*^9, 3.678775777096039*^9}, {
+   3.678775863047914*^9, 3.678775867606845*^9}, {3.6787760714465723`*^9, 
+   3.678776113352688*^9}, {3.67877614421548*^9, 3.678776144887012*^9}, {
+   3.678776387421123*^9, 3.678776389124476*^9}, {3.678776439875646*^9, 
+   3.678776501278431*^9}, 3.678776534134321*^9, {3.678776583586619*^9, 
+   3.678776584775255*^9}}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.678153587508417*^9, 3.678153606557366*^9}}]
 },
 WindowSize->{808, 911},
-WindowMargins->{{Automatic, 872}, {Automatic, 56}},
+WindowMargins->{{Automatic, 914}, {Automatic, 51}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -102,8 +114,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 271, 6, 55, "Input"],
-Cell[832, 28, 2304, 54, 330, "Input"],
-Cell[3139, 84, 92, 1, 32, "Input"]
+Cell[832, 28, 2963, 66, 352, "Input"],
+Cell[3798, 96, 92, 1, 32, "Input"]
 }
 ]
 *)

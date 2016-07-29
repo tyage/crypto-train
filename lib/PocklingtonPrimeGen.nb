@@ -1,0 +1,144 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4825,        135]
+NotebookOptionsPosition[      4474,        119]
+NotebookOutlinePosition[      4812,        134]
+CellTagsIndexPosition[      4769,        131]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "PocklingPrimeGen", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PocklingPrimeGen", "[", 
+    RowBox[{"nBitLen_", ",", "ps_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"psBitLength", ",", "minR", ",", "maxR", ",", "R", ",", "n"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"psBitLength", "=", 
+       RowBox[{"BitLength", "[", "ps", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"nBitLen", "<=", "psBitLength"}], "||", 
+         RowBox[{
+          RowBox[{"psBitLength", "*", "2"}], "<", "nBitLen"}]}], ",", 
+        RowBox[{"Return", "[", "False", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"minR", "=", 
+       RowBox[{"Ceiling", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Power", "[", 
+            RowBox[{"2", ",", 
+             RowBox[{"nBitLen", "-", "1"}]}], "]"}], "-", "1"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"2", "*", "ps"}], ")"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"maxR", "=", 
+       RowBox[{"Floor", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Power", "[", 
+            RowBox[{"2", ",", "nBitLen"}], "]"}], "-", "1", "-", "1"}], ")"}],
+          "/", 
+         RowBox[{"(", 
+          RowBox[{"2", "*", "ps"}], ")"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{"True", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"R", "=", 
+          RowBox[{"RandomInteger", "[", 
+           RowBox[{"{", 
+            RowBox[{"minR", ",", "maxR"}], "}"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"n", "=", 
+          RowBox[{
+           RowBox[{"2", "*", "R", "*", "ps"}], "+", "1"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"PocklingtonJudge", "[", 
+            RowBox[{"n", ",", "R", ",", "ps"}], "]"}], ",", 
+           RowBox[{"Return", "[", "n", "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.678774098796904*^9, 3.6787741734855347`*^9}, {
+  3.6787742100369453`*^9, 3.6787743724429827`*^9}, {3.67877440874445*^9, 
+  3.678774470603551*^9}, {3.678774513196505*^9, 3.67877457927592*^9}, {
+  3.678775874287631*^9, 3.678775877085723*^9}, {3.67877655299502*^9, 
+  3.678776715966976*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "ps", "=", 
+     "103208498526345723814934968636900301131345008313319282137118271322611608\
+665452548439452761192668960390215406828110907461526381952207415373775985016765\
+21571"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"PocklingPrimeGen", "[", 
+     RowBox[{"1024", ",", "ps"}], "]"}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.678774075245017*^9, 3.678774075432373*^9}, {
+  3.678774684462604*^9, 3.678774716762869*^9}, {3.678774970775435*^9, 
+  3.678775013974061*^9}, {3.678775055176073*^9, 3.678775116179879*^9}, {
+  3.678775188180119*^9, 3.678775203681273*^9}, {3.678775472686091*^9, 
+  3.678775529510186*^9}, {3.67877583478479*^9, 3.678775842077548*^9}, {
+  3.678775917394923*^9, 3.678775919202951*^9}, {3.678775967680908*^9, 
+  3.6787760023501387`*^9}, {3.678776684278297*^9, 3.678776686159697*^9}, {
+  3.678776721486383*^9, 3.678776723737389*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.67877585606422*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.678774094694708*^9, 3.6787740948480663`*^9}}]
+},
+WindowSize->{828, 843},
+WindowMargins->{{Automatic, 61}, {-86, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2668, 69, 319, "Input"],
+Cell[3229, 91, 1001, 19, 220, "Input"],
+Cell[4233, 112, 86, 1, 55, "Input"],
+Cell[4322, 115, 148, 2, 77, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

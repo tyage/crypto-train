@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1356,         48]
-NotebookOptionsPosition[      1122,         35]
-NotebookOutlinePosition[      1460,         50]
-CellTagsIndexPosition[      1417,         47]
+NotebookDataLength[      4686,        139]
+NotebookOptionsPosition[      4342,        122]
+NotebookOutlinePosition[      4678,        137]
+CellTagsIndexPosition[      4635,        134]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,20 +21,107 @@ Notebook[{
 Cell[BoxData[
  RowBox[{
   RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/ModAffECExp.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.679870993148328*^9, 3.679870993175684*^9}, {
+   3.679871149328532*^9, 3.679871219407577*^9}, {3.6798712794951067`*^9, 
+   3.679871282368318*^9}, {3.679871336955204*^9, 3.679871390070648*^9}, 
+   3.679871575091069*^9, {3.6798722390988007`*^9, 3.6798722639843407`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"ECElGamalEnc", "[", 
+      RowBox[{
+      "m_", ",", "a_", ",", "x0_", ",", "y0_", ",", "pubx_", ",", "puby_", 
+       ",", "p_", ",", "r_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"U", ",", "V", ",", "c"}], "}"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{"U", "=", 
+         RowBox[{"ModAffECExp", "[", 
+          RowBox[{"a", ",", "x0", ",", "y0", ",", "r", ",", "p"}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"V", "=", 
+         RowBox[{"ModAffECExp", "[", 
+          RowBox[{"a", ",", "pubx", ",", "puby", ",", "r", ",", "p"}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"c", "=", 
+         RowBox[{"BitXor", "[", 
+          RowBox[{
+           RowBox[{"V", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", "m"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", 
+          RowBox[{"U", ",", "c"}], "}"}], "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", "=", "730750818665451459523961714499640833062084344321"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"a", "=", 
+     RowBox[{"-", "3"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"b", "=", "145650976250847204316161868675773209711877624364"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"gx", "=", "0"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"gy", "=", "524698579505495094280915754377106799251498932020"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"k", "=", "172350919665451459123451714499640833062234544321"}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"m", "=", "123750811111151459123451714499640333335555544444"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"r", "=", "123456789123456789123456789123456789123456789123"}], 
+     ";"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r", "=", "113256789123456789123456789123456789123456789123"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Y", "=", 
+     RowBox[{"ModAffECExp", "[", 
+      RowBox[{"a", ",", "gx", ",", "gy", ",", "k", ",", "p"}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"ECElGamalEnc", "[", 
+    RowBox[{"m", ",", "a", ",", "gx", ",", "gy", ",", 
+     RowBox[{"Y", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"Y", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", "p", ",", "r"}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.679872247034127*^9, 3.679872250013238*^9}, {
+   3.679872296905882*^9, 3.679872550193108*^9}, {3.679872602504294*^9, 
+   3.679872608102613*^9}, 3.679872774985993*^9, {3.679872877018195*^9, 
+   3.679872879400619*^9}, {3.679873429136695*^9, 3.6798734733255444`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
     RowBox[{
-    "m_", ",", "a_", ",", "x0_", ",", "y0_", ",", "pubx_", ",", "puby_", ",", 
-     "p_", ",", "r_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", "}"}], ","}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.677461247523443*^9, 3.677461248221837*^9}, {
-  3.677461327223258*^9, 3.677461337368271*^9}, {3.6774613675328836`*^9, 
-  3.677461368110058*^9}, {3.6774614079299583`*^9, 3.677461452748982*^9}}]
+    "466212848172883427112242249539067442757967495403", ",", 
+     "585126393475711910240410506879801220046413736300"}], "}"}], ",", 
+   "311446502518576940848288829973695354505318158861"}], "}"}]], "Output",
+ CellChangeTimes->{3.67987277681839*^9, 3.679872915694703*^9, 
+  3.679873528650889*^9}]
+}, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{Automatic, 216}, {Automatic, 54}},
+WindowSize->{808, 731},
+WindowMargins->{{3, Automatic}, {16, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -49,7 +136,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 560, 13, 77, "Input"]
+Cell[558, 20, 432, 8, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1015, 32, 2942, 76, 473, "Input"],
+Cell[3960, 110, 366, 9, 134, "Output"]
+}, Open  ]]
 }
 ]
 *)

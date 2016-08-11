@@ -1,0 +1,209 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7252,        200]
+NotebookOptionsPosition[      6904,        183]
+NotebookOutlinePosition[      7242,        198]
+CellTagsIndexPosition[      7199,        195]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/Inv.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RampRestorSec", "[", 
+    RowBox[{"k_", ",", "L_", ",", "q_", ",", "vk_", ",", "sidlist_"}], "]"}], 
+   ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "sh", ",", "result", ",", "h", ",", "sum", ",", "j", ",", "ik", ",", 
+       "fij", ",", "lambda", ",", "t"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"sh", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"h", "=", "0"}], ",", 
+        RowBox[{"h", "\[LessEqual]", 
+         RowBox[{"L", "-", "1"}]}], ",", 
+        RowBox[{"h", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sum", "=", "0"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"j", "=", "1"}], ",", 
+           RowBox[{"j", "\[LessEqual]", "k"}], ",", 
+           RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"fij", "=", 
+             RowBox[{
+              RowBox[{"vk", "[", 
+               RowBox[{"[", "j", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"lambda", "=", "1"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"t", "=", "1"}], ",", 
+              RowBox[{"t", "\[LessEqual]", "k"}], ",", 
+              RowBox[{"t", "++"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"t", "\[NotEqual]", "j"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"lambda", "=", 
+                   RowBox[{"Mod", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"lambda", "*", "\[IndentingNewLine]", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"sidlist", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"h", "+", "1"}], "]"}], "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"vk", "[", 
+                    RowBox[{"[", "t", "]"}], "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "*", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Inv", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"vk", "[", 
+                    RowBox[{"[", "j", "]"}], "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "-", 
+                    RowBox[{
+                    RowBox[{"vk", "[", 
+                    RowBox[{"[", "t", "]"}], "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ",", "q"}], "]"}]}], 
+                    "\[IndentingNewLine]", ",", "q"}], "]"}]}], ";"}]}], 
+                "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+             "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"sum", "+=", 
+             RowBox[{"lambda", "*", "fij"}]}], ";"}]}], "\[IndentingNewLine]",
+           "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"result", ",", 
+           RowBox[{"Mod", "[", 
+            RowBox[{"sum", ",", "q"}], "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "result", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"k", "=", "11"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "20"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"idlist", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8",
+      ",", "9", ",", "10", ",", "11", ",", "12", ",", "13", ",", "14", ",", 
+     "15", ",", "16", ",", "17", ",", "18", ",", "19", ",", "20"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"L", "=", "10"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q", "=", "65521"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sidlist", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "21", ",", "22", ",", "23", ",", "24", ",", "25", ",", "26", ",", "27", 
+     ",", "28", ",", "29", ",", "30"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vk", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "65085"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "16661"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "10509"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "64573"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "63561"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "29563"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "16009"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "24328"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", "1547"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "17028"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"11", ",", "16432"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"RampRestorSec", "[", 
+  RowBox[{"k", ",", "L", ",", "q", ",", "vk", ",", "sidlist"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.678942373530507*^9, 3.678942404251712*^9}, {
+  3.678942553540185*^9, 3.678942582260914*^9}, {3.678942659224803*^9, 
+  3.678942690563765*^9}, {3.67894333803129*^9, 3.6789433431987667`*^9}, {
+  3.678943440763734*^9, 3.6789436099167223`*^9}, {3.678944017343461*^9, 
+  3.6789440660897923`*^9}, {3.678946157729171*^9, 3.6789465875539*^9}, {
+  3.678946638434856*^9, 3.678946640580164*^9}}],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{{3.6789465717745028`*^9, 3.6789465905645227`*^9}, 
+   3.6789466413057003`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "18720", ",", "24941", ",", "8289", ",", "8275", ",", "25955", ",", "17249",
+    ",", "28704", ",", "28005", ",", "28002", ",", "25970"}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.6789465717745028`*^9, 3.6789465905645227`*^9}, 
+   3.678946641377563*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 273}, {51, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5879, 145, 803, "Input"],
+Cell[6462, 169, 127, 2, 32, "Output"],
+Cell[6592, 173, 296, 7, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

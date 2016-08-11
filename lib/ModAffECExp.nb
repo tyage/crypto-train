@@ -1,0 +1,142 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4494,        133]
+NotebookOptionsPosition[      4186,        117]
+NotebookOutlinePosition[      4524,        132]
+CellTagsIndexPosition[      4481,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Load", "[", "\"\<./lib/ModAffECDbl.nb\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Load", "[", "\"\<./lib/ModAffECAdd.nb\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "ModAffECExp", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ModAffECExp", "[", 
+     RowBox[{"a_", ",", "gx_", ",", "gy_", ",", "k_", ",", "p_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"i", ",", "y", ",", "kBit", ",", "kBitLen"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"kBit", "=", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"k", ",", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"kBitLen", "=", 
+        RowBox[{"Length", "[", "kBit", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"y", "=", 
+        RowBox[{"{", 
+         RowBox[{"gx", ",", "gy"}], "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "kBitLen"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"y", "=", 
+           RowBox[{"ModAffECDbl", "[", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"y", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "a", ",", "p"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"kBit", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "1"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"y", "=", 
+             RowBox[{"ModAffECAdd", "[", 
+              RowBox[{"gx", ",", "gy", ",", 
+               RowBox[{"y", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"y", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], ",", "p"}], "]"}]}]}], 
+           "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "y", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", "730750818665451459523961714499640833062084344321"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"-", "3"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "145650976250847204316161868675773209711877624364"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"gx", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"gy", "=", "524698579505495094280915754377106799251498932020"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"k", "=", "172350919665451459123451714499640833062234544321"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ModAffECExp", "[", 
+   RowBox[{"a", ",", "gx", ",", "gy", ",", "k", ",", "p"}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\n"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.679871768932496*^9, 3.679871769764463*^9}, {
+   3.6798720730155077`*^9, 3.6798720944855623`*^9}, {3.679872131926406*^9, 
+   3.6798721553274517`*^9}, 3.679872222037897*^9, {3.679874206062469*^9, 
+   3.679874221085555*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "659423981851798673199363748846515029607723203572", ",", 
+   "192449026776164325281439863650398620195314634457"}], "}"}]], "Output",
+ CellChangeTimes->{3.6798742365849524`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 753},
+WindowMargins->{{Automatic, 115}, {Automatic, 39}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 16, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3369, 85, 627, "Input"],
+Cell[3952, 109, 218, 5, 55, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
